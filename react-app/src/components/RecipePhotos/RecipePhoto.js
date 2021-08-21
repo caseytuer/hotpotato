@@ -93,7 +93,7 @@ const RecipePhoto = ({loaded}) => {
     },[videoUrl])
    
     return (
-        <>            
+        <div className='photo-wrapper'>            
             {!editPhoto &&
                 < div className='recipe-carousel-with-edit'> 
 
@@ -116,12 +116,12 @@ const RecipePhoto = ({loaded}) => {
                         
                             // <ReactPlayer url={videoUrl}></ReactPlayer>
                             getVideos()?.map(video => (
-                                <ReactPlayer url={video}></ReactPlayer>
+                                <ReactPlayer url={video} className='recipe-carousel-images'></ReactPlayer>
                             ))
                         }
 
                         {addVideo && 
-                            <ReactPlayer url={videoUrl}></ReactPlayer>
+                        <ReactPlayer url={videoUrl} className='recipe-carousel-images'></ReactPlayer>
                         }
                        
                     </Carousel>
@@ -157,7 +157,7 @@ const RecipePhoto = ({loaded}) => {
                     </form>
                 </div>
             }
-        </>
+        </div>
     )
 }
 
